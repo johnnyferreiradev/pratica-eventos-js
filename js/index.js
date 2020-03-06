@@ -30,10 +30,6 @@ function montarItemFeito(content) {
   return itemContainer;
 }
 
-function addFeitoActions(item) {
-
-}
-
 function addItem() {
   const item = montarItem();
   aFazerContainer.append(item);
