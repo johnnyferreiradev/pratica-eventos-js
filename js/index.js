@@ -6,7 +6,7 @@ const itemAFazer = document.querySelectorAll('#a-fazer div input');
 let listaDeAFazer;
 const feitoContainer = document.querySelector('#feito');
 
-//Funções
+// Funções
 function getValorEntrada() {
   return entrada.value;
 }
@@ -30,6 +30,10 @@ function montarItemFeito(content) {
   return itemContainer;
 }
 
+function addFeitoActions(item) {
+
+}
+
 function addItem() {
   const item = montarItem();
   aFazerContainer.append(item);
@@ -40,6 +44,13 @@ function addItem() {
     listaDeAFazer.forEach((item) => {
       item.addEventListener('click', () => {
         feitoContainer.append(item);
+
+        listaDeFeito = document.querySelectorAll('#feito div');
+        listaDeFeito.forEach((itemFeito) => {
+          itemFeito.addEventListener('click', () => {
+            itemFeito.parentNode.removeChild(itemFeito);
+          });
+        });
       });
     });
   }
